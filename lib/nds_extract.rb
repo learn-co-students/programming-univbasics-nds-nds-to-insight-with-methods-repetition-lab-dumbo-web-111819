@@ -45,10 +45,14 @@ def total_gross(source)
   # returned by directors_totals, and add it to a running total. When done,
   # return the total
   total = 0 
+  dir_name_list = list_of_directors(source)
+  dir_earning = directors_totals(source)
   counter = 0 
-  while counter < source.length do 
-    total += directors_totals(source)[list_of_directors][counter]
-  end3
+  while counter < dir_earning.length do 
+    dir_named = dir_name_list[counter]
+    total += dir_earning[dir_named]
+    counter += 1
+  end
   total
 end
 
